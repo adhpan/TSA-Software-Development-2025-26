@@ -13,7 +13,7 @@ from pydub.utils import get_player_name
 
 # Main window
 root = tk.Tk()
-root.title("Developer: Adhrit Pantam")
+root.title("Developers: Adhrit Pantam, Vedant Patil")
 root.geometry("1000x850")
 root.config(bg="#000000")
 
@@ -135,5 +135,6 @@ def start_stop_running():
 start = tk.Button(root, text="Start/Stop Webcam", command=start_stop_running)
 start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
+
 
 root.mainloop()
