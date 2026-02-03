@@ -48,10 +48,8 @@ running = False
 last_said = ""
 last_said_time = 0
 
-# Force pydub to use ffplay to play audio
-def override_player():
-    return "ffplay"
-get_player_name = override_player
+# Default to ffplay
+get_player_name = lambda: "ffplay"
 
 # Run TTS
 async def say_prediction(main_object):
@@ -137,3 +135,4 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
+
