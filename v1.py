@@ -1,3 +1,4 @@
+# DEVELOPERS: Adhrit Pantam, Vedant Patil
 import tkinter as tk
 import cv2
 from ultralytics import YOLO
@@ -7,13 +8,11 @@ from edge_tts import Communicate
 import asyncio
 from threading import Thread
 from io import BytesIO
-from pydub import AudioSegment
-from pydub.playback import play
-from pydub.utils import get_player_name
+import pygame
 
 # Main window
 root = tk.Tk()
-root.title("Developers: Adhrit Pantam, Vedant Patil")
+root.title("Developer: Adhrit Pantam")
 root.geometry("1000x850")
 root.config(bg="#000000")
 
@@ -48,18 +47,20 @@ running = False
 last_said = ""
 last_said_time = 0
 
-# Default to ffplay
-get_player_name = lambda: "ffplay"
+# Initialize pygame audio mixer
+pygame.mixer.init()
 
 # Run TTS
 async def say_prediction(main_object):
-    tts = Communicate(text="A " + main_object, voice="en-US-AriaNeural")
+    tts = Communicate(text=main_object, voice="en-US-AriaNeural")
     audio_buffer = bytearray()
-    async for sample in tts.stream():
-        if sample['type'] == 'audio':
+    async for sample in tts.stream(): # Receive audio data in chunks and append to bytearray
+        if sample['type'] == 'audio': # Only if audio data
             audio_buffer.extend(sample['data'])
-    audio = AudioSegment.from_file(BytesIO(audio_buffer), format="mp3")
-    play(audio)
+    audio_file = BytesIO(audio_buffer) # Wraps bytearray in a file-like object for pygame
+    audio_file.seek(0) # Reset file pointer to start of audio
+    sound = pygame.mixer.Sound(file=audio_file) # Load audio into pygame mixer
+    sound.play()
 
 # Initiate TTS
 def run_tts(main_object):
@@ -135,4 +136,3 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
-
