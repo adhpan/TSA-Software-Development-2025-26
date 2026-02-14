@@ -1,4 +1,5 @@
 # DEVELOPERS: Adhrit Pantam, Vedant Patil
+# PROJECT: ML Object Classifier with TTS
 import tkinter as tk
 import cv2
 from ultralytics import YOLO
@@ -136,3 +137,4 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
+
