@@ -13,7 +13,7 @@ import pygame
 
 # Main window
 root = tk.Tk()
-root.title("Developer: Adhrit Pantam")
+root.title("ML Object Classifier with TTS")
 root.geometry("1000x850")
 root.config(bg="#000000")
 
@@ -138,6 +138,7 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
+
 
 
 
