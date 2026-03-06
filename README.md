@@ -30,7 +30,7 @@ DEPENDENCIES:
 opencv-python (for webcam usage), ultralytics (for YOLOv11 ML model), pillow (for Python Imaging Library to process frames), edge-tts (for TTS usage), pygame (for audio engine usage)
 
 
-TERMINAL COMMAND (RUN BEFORE STARTING):
+TERMINAL COMMAND (RUN BEFORE STARTING) FOR DEPENDENCIES:
 
 pip install opencv-python ultralytics pillow edge-tts pygame
 
