@@ -1,4 +1,4 @@
-# DEVELOPERS: Adhrit Pantam, Vedant Patil
+# DEVELOPERS: Adhrit Pantam
 # PROJECT: ML Object Classifier with TTS
 import tkinter as tk
 import cv2
@@ -138,5 +138,6 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
+
 
 
