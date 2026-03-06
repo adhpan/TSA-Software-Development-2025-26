@@ -33,8 +33,7 @@ intro2.config(bg="#000000", fg="#ffffff", text="Developed by: Adhrit Pantam (9th
 # Webcam display
 display = tk.Label(root)
 display.pack(pady=30)
-display.config(bg="#000000", fg="#ffffff", text="This application detects basic household objects using your webcam and classifies them into a general category by saying the name of the category out loud.\n" \
-"Not all objects are able to be classified with accuracy and may be mistaken for other items, as this ML model is pre-trained on just 80 categories.")
+display.config(bg="#000000", fg="#ffffff")
 
 object = tk.Label(root)
 object.pack(pady=10)
@@ -138,6 +137,7 @@ start.pack(pady=20, ipady=5, ipadx=10)
 start.config(bg="#211929", fg="#f0e8fa", font=("Times New Roman", 12))
 
 root.mainloop()
+
 
 
 
